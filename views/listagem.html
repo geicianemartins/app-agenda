@@ -1,0 +1,41 @@
+<div class="col-md-12" ng-controller="ListagemCtrl">
+<div class="row">
+	<h2 class="text-center"><u>Agenda</u></h2>
+</div>
+<div class="row">
+<a ng-click="goCadastro()" class="btn btn-primary">Cadastrar</a>
+</div>
+<br/>
+<div class="row">
+<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+	<thead>
+		<tr>
+			<td>Nome</td>
+			<td>Sobrenome</td>
+            <td>Telefone</td>
+			<td>Apelido</td>
+            <td>Nome da mãe</td>
+			<td>Data do cadastro</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in agenda">
+		<td>{{item.nome}}</td>
+		<td>{{item.sobrenome}}</td>
+        <td>{{item.telefone}}</td>
+        <td>{{item.apelido}}</td>
+		<td>{{item.nomeMae}}</td>
+		<td>{{item.dataCadastro}}</td>
+		<td><button ng-click="editar(item.id)" class="btn btn-info btn-block">Editar</button></td>
+		<td><button ng-click="deletar(item.id)" class="btn btn-danger btn-block">Deletar</button></td>
+		</tr>
+		<tr ng-show="notFound" class="text-center">
+			<td colspan="4">Não tem contatos</td>
+		</tr>
+	</tbody>
+</table>
+	
+</div>
+</div>
